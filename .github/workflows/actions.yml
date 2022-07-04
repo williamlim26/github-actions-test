@@ -11,7 +11,9 @@ on:
 jobs:
   run-github-actions:
     runs-on: ubuntu-latest
-    steps: 
+    steps:
+      - name: payload
+        run: echo "${{ github.event.client_payload.env }}"
       - name: List Files
         run: | 
           pwd
